@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 {
 	if (argc < 2)
 	{
-		printf("\nstage.tbl to mrmap.bin converter by Clownacy\n\nUsage: %s [input filename] [output filename]\n", argv[0]);
+		printf("\nstage.tbl to mrmap.bin converter by Clownacy\n\nUsage: %s [input filename] [output filename]\n\n", argv[0]);
 	}
 	else
 	{
