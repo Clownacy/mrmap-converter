@@ -73,6 +73,8 @@ int main(int argc, char *argv[])
 
 					fwrite(&table_entry[0], 1, 0x10 - 1, out_file);
 					fputc(0, out_file);
+					fwrite(&table_entry[0x20], 1, 0x10 - 1, out_file);
+					fputc(0, out_file);
 					fputc(table_entry[0x40], out_file);
 					fwrite(&table_entry[0x44], 1, 0x10 - 1, out_file);
 					fputc(0, out_file);
@@ -82,6 +84,8 @@ int main(int argc, char *argv[])
 					fputc(0, out_file);
 					fputc(table_entry[0xA4], out_file);
 					fwrite(&table_entry[0xC5], 1, 0x20 - 1, out_file);
+					fputc(0, out_file);
+					fputc(0, out_file);
 					fputc(0, out_file);
 				}
 
