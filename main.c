@@ -60,14 +60,14 @@ int main(int argc, char *argv[])
 			else
 			{
 				// Write 'mrmap.bin' header
-				const unsigned long entry_count = in_file_size / 0xE5;
+				const size_t entry_count = in_file_size / 0xE5;
 				fputc((entry_count >> (8 * 0)) & 0xFF, out_file);
 				fputc((entry_count >> (8 * 1)) & 0xFF, out_file);
 				fputc((entry_count >> (8 * 2)) & 0xFF, out_file);
 				fputc((entry_count >> (8 * 3)) & 0xFF, out_file);
 
 				// Convert each room entry from 'stage.tbl' format to 'mrmap.bin'
-				for (unsigned int i = 0; i < entry_count; ++i)
+				for (size_t i = 0; i < entry_count; ++i)
 				{
 					const unsigned char *table_entry = &in_file_buffer[i * 0xE5];
 
