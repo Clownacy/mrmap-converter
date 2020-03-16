@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		const char *in_filename = argc > 1 ? argv[1] : "stage.tbl";
 		const char *out_filename = argc > 2 ? argv[2] : "mrmap.bin";
 
-		FILE *in_file = fopen(argc > 1 ? argv[1] : "stage.tbl", "rb");
+		FILE *in_file = fopen(in_filename, "rb");
 
 		if (in_file == NULL)
 		{
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 			fread(in_file_buffer, 1, in_file_size, in_file);
 			fclose(in_file);
 
-			FILE *out_file = fopen("mrmap.bin", "wb");
+			FILE *out_file = fopen(out_filename, "wb");
 
 			if (out_file == NULL)
 			{
